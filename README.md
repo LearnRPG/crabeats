@@ -15,3 +15,5 @@ COOKIE: You must use your browser to find the ordering cookie.
 It is recommended to start running the program on Friday at 17:00.
 
 Here are the execution results:
+
+![image](demo.png)
