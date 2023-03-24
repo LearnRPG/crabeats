@@ -12,6 +12,9 @@ making you are one of the proud members with "Golden 100". :fire:
 - SHOOTVENDOR: Name of the vendor for ordering meals.
 - COOKIE: You must use your browser to find the ordering cookie.
 
+## Environment setup
+- Install the latest version of node.js https://nodejs.org/en
+
 ## Reminder
 It is recommended to start running the program on Friday at 17:00.
 
