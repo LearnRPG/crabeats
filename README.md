@@ -5,7 +5,7 @@ This program can automatically order meals from Realtek 2nd factory, \
 making you are one of the proud members with "Golden 100". :fire:
 
 ## Parameter Descriptions
-- STARTDATE: Starting time for ordering meals.
+- STARTDATE: Starting date for ordering meals.
 - TOTALDAYS: Total number of days for ordering.
 - RANDSECMIN: Minimum random time (in seconds).
 - RANDSECMAX: Maximum random time (in seconds).
