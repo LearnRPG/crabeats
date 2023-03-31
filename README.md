@@ -34,6 +34,7 @@ making you are one of the proud members with "Golden 100". :fire: :grin::grin:
 
 ## Environment setup
 - Install the latest version of node.js https://nodejs.org/en
+- Install node module - `request`
 
 ## Reminder
 It is recommended to start running the program on Friday at 17:00. :clock5:
