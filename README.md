@@ -16,7 +16,7 @@ making you are one of the proud members with "Golden 100". :fire:
 - Login crabeats website
 - Firefox type F12
 - Goto Network page and XHR page
-- Delete all data
+- Delete all data (click Trash Can icon)
 - Refresh page (F5)
 - Find your COOKIE data and copy it
 
