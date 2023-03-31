@@ -20,6 +20,8 @@ making you are one of the proud members with "Golden 100". :fire:
 - Refresh page (F5)
 - Find your COOKIE data and copy it
 
+![image](cookie.png)
+
 ## Environment setup
 - Install the latest version of node.js https://nodejs.org/en
 
