@@ -12,6 +12,14 @@ making you are one of the proud members with "Golden 100". :fire:
 - SHOOTVENDOR: Name of the vendor for ordering meals.
 - COOKIE: You must use your browser to find the ordering cookie.
 
+## How to fetch your own COOKIE
+- Login crabeats website
+- Firefox type F12
+- Goto Network page and XHR page
+- Delete all data
+- Refresh page (F5)
+- Find your COOKIE data and copy it
+
 ## Environment setup
 - Install the latest version of node.js https://nodejs.org/en
 
