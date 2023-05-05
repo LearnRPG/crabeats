@@ -1,126 +1,14 @@
 const request = require('request');
 
-const STARTDATE = '2023/3/27';
-const TOTALDAYS = 1;
+const STARTDATE = '2023/5/8';
+const TOTALDAYS = 5;
 const RANDSECMIN = 50;
-const RANDSECMAX = 130;
-const SHOOTVENDOR = '輪動櫃-姊妹飯桶'; // 風味餐-國輝 輪動櫃-姊妹飯桶
+const RANDSECMAX = 70;
+const SHOOTVENDOR = ['輪動櫃-悟饕便當', '輪動櫃-姊妹飯桶']; // 輪動櫃-悟饕便當 輪動櫃-姊妹飯桶
 const COOKIE = ''; // You must use your browser to find the ordering cookie.
 
 let emptyCnt = 0;
 
-const FloorData = [
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '11',
-    FloorLimit: '99999',
-    FloorHasOrdered: '98',
-    FloorName: '1F 醫務室前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '12',
-    FloorLimit: '99999',
-    FloorHasOrdered: '3',
-    FloorName: '2F A/B電梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '14',
-    FloorLimit: '99999',
-    FloorHasOrdered: '7',
-    FloorName: '3F CDE電梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '16',
-    FloorLimit: '99999',
-    FloorHasOrdered: '1',
-    FloorName: '4F A/B電梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '17',
-    FloorLimit: '99999',
-    FloorHasOrdered: '4',
-    FloorName: '4F 貨梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '18',
-    FloorLimit: '99999',
-    FloorHasOrdered: '12',
-    FloorName: '5F C/D/E電梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '20',
-    FloorLimit: '99999',
-    FloorHasOrdered: '1',
-    FloorName: '6F A/B電梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '21',
-    FloorLimit: '99999',
-    FloorHasOrdered: '7',
-    FloorName: '6F 貨梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '22',
-    FloorLimit: '99999',
-    FloorHasOrdered: '4',
-    FloorName: '7F A/B電梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '23',
-    FloorLimit: '99999',
-    FloorHasOrdered: '4',
-    FloorName: '7F 貨梯前',
-    MealType: null,
-    Date: null,
-  },
-  {
-    Id: null,
-    Name: '瑞昱二廠',
-    FloorId: '24',
-    FloorLimit: '99999',
-    FloorHasOrdered: '9',
-    FloorName: '8F C/D/E電梯前',
-    MealType: null,
-    Date: null,
-  },
-];
 /**
   1: '9：00~9：30',
   3: '11：20~11：40',
@@ -195,10 +83,12 @@ const handleResponse = (error, response, body) => {
     // console.log(obj.length);
     obj.forEach((id, index) => {
       // console.log(id);
-      if (id.VendorName === SHOOTVENDOR) {
-        // console.log(id);
-        order(id);
-      }
+      SHOOTVENDOR.forEach((vendor) => {
+        if (id.VendorName === vendor) {
+          // console.log(id);
+          order(id);
+        }
+      });
     });
   }
 };
