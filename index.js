@@ -1,6 +1,8 @@
 const request = require('request');
 
-const STARTDATE = '2023/5/8';
+// Create a new Date object from the current date and time in the Asia/Taipei time zone
+const nDate = new Date().toLocaleString('en-US', {timeZone: 'Asia/Taipei'});
+const STARTDATE =  new Date(nDate);
 const TOTALDAYS = 5;
 const RANDSECMIN = 50;
 const RANDSECMAX = 70;
@@ -109,14 +111,14 @@ function preview(startDate, totalDays) {
     TE: 'trailers',
   };
 
-  const dateArray = startDate.split('/');
-  const year = parseInt(dateArray[0], 10);
-  const month = parseInt(dateArray[1], 10);
-  const date = parseInt(dateArray[2], 10);
+  const year = STARTDATE.getFullYear()
+  const month = STARTDATE.getMonth() + 1
+  const date = STARTDATE.getDate()
 
   for (let i = 0; i < totalDays; i += 1) {
     const datetime = new Date(year, month - 1, date + i);
     const newYear = datetime.getFullYear();
+    // Pad the month and date with zeros if they are less than 10
     const newMonth = (`0${datetime.getMonth() + 1}`).slice(-2);
     const newDate = (`0${datetime.getDate()}`).slice(-2);
 
