@@ -11,6 +11,7 @@ making you are one of the proud members with "Golden 100". :fire: :grin::grin:
 - RANDSECMAX: Maximum random time (in seconds).
 - SHOOTVENDOR: Name of the vendor for ordering meals.
 - COOKIE: You must use your browser to find the ordering cookie.
+- ORDERTIME: The time at which the ordering process begins.
 
 ## How to fetch your own COOKIE
 ### Firefox
