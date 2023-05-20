@@ -1,12 +1,14 @@
 const request = require('request');
 
-const STARTDATE = '2023/5/8';
+const STARTDATE = '2023/5/29';
 const TOTALDAYS = 5;
 const RANDSECMIN = 50;
 const RANDSECMAX = 70;
 const SHOOTVENDOR = ['輪動櫃-悟饕便當', '輪動櫃-姊妹飯桶']; // 輪動櫃-悟饕便當 輪動櫃-姊妹飯桶
 const COOKIE = ''; // You must use your browser to find the ordering cookie.
+const ORDERTIME = '17:30:00';
 
+let timerSheet;
 let emptyCnt = 0;
 
 /**
@@ -132,4 +134,23 @@ function preview(startDate, totalDays) {
   }
 }
 
-preview(STARTDATE, TOTALDAYS);
+function countdown() {
+  clearTimeout(timer);
+
+  let timecur = new Date();
+
+  diffHour = ORDERTIME.split(':')[0] - timecur.getHours();
+  diffMinutes = ORDERTIME.split(':')[1] - timecur.getMinutes();
+  diffSeconds = ORDERTIME.split(':')[2] - timecur.getSeconds();
+  diffTotal = diffHour * 3600 + diffMinutes * 60 + diffSeconds;
+
+  if (diffTotal <= 0) {
+    console.log('                                                           \r');
+    preview(STARTDATE, TOTALDAYS);
+  } else {
+    process.stdout.write(`自動訂餐將在 ${diffTotal} 秒後執行...          ` + '\r');
+    timer = setInterval(countdown, 1000);
+  }
+}
+
+timer = setInterval(countdown, 1000);
